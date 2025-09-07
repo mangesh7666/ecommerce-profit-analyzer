@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ecommerce-profit-analyzer/static/css/main.ca2b208a.css",
-    "main.js": "/ecommerce-profit-analyzer/static/js/main.007125cc.js",
+    "main.js": "/ecommerce-profit-analyzer/static/js/main.1efac84f.js",
     "static/js/453.859d73f0.chunk.js": "/ecommerce-profit-analyzer/static/js/453.859d73f0.chunk.js",
     "index.html": "/ecommerce-profit-analyzer/index.html",
     "main.ca2b208a.css.map": "/ecommerce-profit-analyzer/static/css/main.ca2b208a.css.map",
-    "main.007125cc.js.map": "/ecommerce-profit-analyzer/static/js/main.007125cc.js.map",
+    "main.1efac84f.js.map": "/ecommerce-profit-analyzer/static/js/main.1efac84f.js.map",
     "453.859d73f0.chunk.js.map": "/ecommerce-profit-analyzer/static/js/453.859d73f0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ca2b208a.css",
-    "static/js/main.007125cc.js"
+    "static/js/main.1efac84f.js"
   ]
 }
