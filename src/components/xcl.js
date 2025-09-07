@@ -8,6 +8,15 @@ const styles = {
     marginBottom: '10px',
     width: '100%'
   },
+
+  /* Media query for small screens */
+@media (max-width: 768px) { /* You can adjust 768px to your desired breakpoint */
+  .formGroup {
+    margin-left: 0 !important; /* Remove left margin */
+    margin-right: 0 !important; /* Remove right margin */
+  }
+},
+
   input: { 
     padding: '8px',
     width: '100%'
