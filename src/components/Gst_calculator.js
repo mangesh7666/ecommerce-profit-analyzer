@@ -117,252 +117,134 @@ const GSTCalculator = () => {
     console.log("National Net Profit:", nationalNetProfit);
   };
 
-  return (
-  <div
-    style={{
-      padding: "20px",
-      maxWidth: "100%",
-      boxSizing: "border-box",
-    }}
-  >
-    <form
-      onSubmit={handleCalculate}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "15px",
-        width: "100%",
-      }}
-    >
-      <h2 style={{ textAlign: "center" }}>Calculate Profit Margin</h2>
-
-      <div>
-        <h3>Product Price</h3>
-        <label style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          Inclusive Amount:
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            required
-            style={{
-              padding: "8px",
-              width: "100%",
-              maxWidth: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-            }}
-          />
-        </label>
-      </div>
-
-      <div>
-        <label style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          GST Rate (%):
-          <input
-            type="number"
-            value={gstRate}
-            onChange={(e) => setGstRate(e.target.value)}
-            required
-            style={{
-              padding: "8px",
-              width: "100%",
-              maxWidth: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-            }}
-          />
-        </label>
-      </div>
-
-      <h3>Commission and Packing Cost</h3>
-      <div>
-        <label style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          Total Commission:
-          <input
-            type="number"
-            value={comission}
-            onChange={(e) => setComission(e.target.value)}
-            required
-            style={{
-              padding: "8px",
-              width: "100%",
-              maxWidth: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-            }}
-          />
-        </label>
-      </div>
-
-      <div>
-        <label style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          Packing Cost:
-          <input
-            type="number"
-            value={packingcost}
-            onChange={(e) => setPackingcost(e.target.value)}
-            required
-            style={{
-              padding: "8px",
-              width: "100%",
-              maxWidth: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-            }}
-          />
-        </label>
-      </div>
-
-      <h3>Shipping Charges</h3>
-      <div>
-        <label style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          Local Amount:
-          <input
-            type="number"
-            value={local}
-            onChange={(e) => setLocal(e.target.value)}
-            required
-            style={{
-              padding: "8px",
-              width: "100%",
-              maxWidth: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-            }}
-          />
-        </label>
-      </div>
-
-      <div>
-        <label style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          Regional Amount:
-          <input
-            type="number"
-            value={regional}
-            onChange={(e) => setRegional(e.target.value)}
-            required
-            style={{
-              padding: "8px",
-              width: "100%",
-              maxWidth: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-            }}
-          />
-        </label>
-      </div>
-
-      <div>
-        <label style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          National Amount:
-          <input
-            type="number"
-            value={national}
-            onChange={(e) => setNational(e.target.value)}
-            required
-            style={{
-              padding: "8px",
-              width: "100%",
-              maxWidth: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-            }}
-          />
-        </label>
-      </div>
-
-      <h3>Selling Cost of Product</h3>
-      <div>
-        <label style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          Product Selling Cost:
-          <input
-            type="number"
-            value={sellingprice}
-            onChange={(e) => setProductprice(e.target.value)}
-            required
-            style={{
-              padding: "8px",
-              width: "100%",
-              maxWidth: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-            }}
-          />
-        </label>
-      </div>
-
-      <button
-        type="submit"
-        style={{
-          padding: "10px",
-          marginTop: "15px",
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
-          cursor: "pointer",
-          maxWidth: "200px",
-        }}
-      >
-        Calculate
-      </button>
-    </form>
-
-    {finalAmount !== null &&
-      finalAmount1 !== null &&
-      finalAmount2 !== null && (
-        <div style={{ overflowX: "auto", marginTop: "30px" }}>
-          <table
-            style={{
-              width: "100%",
-              maxWidth: "600px",
-              margin: "0 auto",
-              borderCollapse: "collapse",
-            }}
-          >
-            <thead>
-              <tr>
-                <th style={mystyle1}>Market</th>
-                <th style={mystyle1}>Gross Profit</th>
-                <th style={mystyle1}>Net Profit</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={mystyle}>Local Market</td>
-                <td style={mystyle}>{finalAmount.toFixed(2)}</td>
-                <td style={mystyle}>
-                  {netProfitLocal !== null
-                    ? netProfitLocal.toFixed(2)
-                    : "N/A"}
-                </td>
-              </tr>
-              <tr>
-                <td style={mystyle}>Regional Market</td>
-                <td style={mystyle}>{finalAmount1.toFixed(2)}</td>
-                <td style={mystyle}>
-                  {netProfitRegional !== null
-                    ? netProfitRegional.toFixed(2)
-                    : "N/A"}
-                </td>
-              </tr>
-              <tr>
-                <td style={mystyle}>National Market</td>
-                <td style={mystyle}>{finalAmount2.toFixed(2)}</td>
-                <td style={mystyle}>
-                  {netProfitNational !== null
-                    ? netProfitNational.toFixed(2)
-                    : "N/A"}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    return (
+    <div style={{ padding: '20px' }}>
+      <form onSubmit={handleCalculate}>
+        <h2 style={{ textAlign: 'center' }}>Calculate Profit Margin</h2>
+        <div>
+          <h3>Product Price</h3>
+          <label>
+            Inclusive Amount:
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              required
+            />
+          </label>
         </div>
+        <div>
+          <label>
+            GST Rate (%):
+            <input
+              type="number"
+              value={gstRate}
+              onChange={(e) => setGstRate(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <h3>Commission and Packing Cost</h3>
+        <div>
+          <label>
+            Total Commission:
+            <input
+              type="number"
+              value={comission}
+              onChange={(e) => setComission(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Packing Cost:
+            <input
+              type="number"
+              value={packingcost}
+              onChange={(e) => setPackingcost(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <h3>Shipping Charges</h3>
+        <div>
+          <label>
+            Local Amount:
+            <input
+              type="number"
+              value={local}
+              onChange={(e) => setLocal(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Regional Amount:
+            <input
+              type="number"
+              value={regional}
+              onChange={(e) => setRegional(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            National Amount:
+            <input
+              type="number"
+              value={national}
+              onChange={(e) => setNational(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <h3>Selling Cost of Product</h3>
+        <div>
+          <label>
+            Product Selling Cost:
+            <input
+              type="number"
+              value={sellingprice}
+              onChange={(e) => setProductprice(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <button type="submit">Calculate</button>
+      </form>
+      {finalAmount !== null && finalAmount1 !== null && finalAmount2 !== null && (
+        <table style={{ width: '60%', borderCollapse: 'collapse', marginRight:'20%', marginLeft:'20%'}}>
+          <thead>
+            <tr>
+              <th style={mystyle1}>Market</th>
+              <th style={mystyle1}>Gross Profit</th>
+              <th style={mystyle1}>Net Profit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={mystyle}>Local Market</td>
+              <td style={mystyle}>{finalAmount.toFixed(2)}</td>
+              <td style={mystyle}>{netProfitLocal !== null ? netProfitLocal.toFixed(2) : 'N/A'}</td>
+            </tr>
+            <tr>
+              <td style={mystyle}>Regional Market</td>
+              <td style={mystyle}>{finalAmount1.toFixed(2)}</td>
+              <td style={mystyle}>{netProfitRegional !== null ? netProfitRegional.toFixed(2) : 'N/A'}</td>
+            </tr>
+            <tr>
+              <td style={mystyle}>National Market</td>
+              <td style={mystyle}>{finalAmount2.toFixed(2)}</td>
+              <td style={mystyle}>{netProfitNational !== null ? netProfitNational.toFixed(2) : 'N/A'}</td>
+            </tr>
+          </tbody>
+        </table>
       )}
-  </div>
-);
-
+    </div>
+  );
 };
 
 export default GSTCalculator;
